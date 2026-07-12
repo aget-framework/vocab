@@ -1,0 +1,42 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<title>AGET Framework Vocabulary</title></head><body>
+<h1>AGET Framework Vocabulary</h1>
+<p>Published concepts from the AGET framework — configuration and lifecycle management for CLI-based human-AI collaborative coding agents.</p>
+<p>Namespace: <code>https://w3id.org/aget/vocab#</code> · 
+License: <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache-2.0</a> · 
+Formats: <a href='vocab.ttl'>Turtle</a> · <a href='vocab.jsonld'>JSON-LD</a></p><hr>
+<section id='Learning_Document'><h2>Learning Document</h2>
+<p><code>https://w3id.org/aget/vocab#Learning_Document</code></p>
+<p>A structured, persistent, searchable document that captures a single durable lesson extracted from operational experience, classified for reuse either by other agents (framework lessons) or by the human principal (domain lessons). Functions as a unit of organizational memory that persists beyond ephemeral session context; designed for accretion — many small cross-linked documents rather than monolithic reports.</p>
+<p><em>Example:</em> An agent records a lesson that publication-forum decisions are not publication-standard adoptions, and later sessions cite it before designing a publishing capability.</p>
+<p>related: <a href='#Software_Session'>Software_Session</a></p>
+<p>Forum page: <a href='https://www.gabormelli.com/RKB/Learning_Document'>https://www.gabormelli.com/RKB/Learning_Document</a></p>
+</section>
+<section id='Agent_Fleet'><h2>Agent Fleet</h2>
+<p><code>https://w3id.org/aget/vocab#Agent_Fleet</code></p>
+<p>A bounded set of software agents operating under shared governance, typically with one supervising agent and multiple worker agents. A fleet shares configuration standards, session protocols, and a common upgrade lifecycle while each member retains its own domain scope and memory.</p>
+<p><em>Example:</em> A fleet supervisor coordinates version upgrades across its worker agents and verifies each member&#x27;s deployment before closing a release cycle.</p>
+<p>related: <a href='#Initialization_Protocol'>Initialization_Protocol</a></p>
+<p>Forum page: <a href='https://www.gabormelli.com/RKB/Agent_Fleet'>https://www.gabormelli.com/RKB/Agent_Fleet</a></p>
+</section>
+<section id='Software_Session'><h2>Software Session</h2>
+<p><code>https://w3id.org/aget/vocab#Software_Session</code></p>
+<p>A bounded interval of interactive or autonomous software operation with a defined start and end, its own working context, and lifecycle protocols that establish and wind down that context. For collaborative agents, the session is the unit within which context is loaded, work is performed, and durable artifacts are handed off.</p>
+<p><em>Example:</em> An agent session opens with an initialization protocol that loads identity and pending work, and closes by writing a handoff file for the next session.</p>
+<p>related: <a href='#Initialization_Protocol'>Initialization_Protocol</a> · related: <a href='#Learning_Document'>Learning_Document</a></p>
+<p>Forum page: <a href='https://www.gabormelli.com/RKB/Software_Session'>https://www.gabormelli.com/RKB/Software_Session</a></p>
+</section>
+<section id='Initialization_Protocol'><h2>Initialization Protocol</h2>
+<p><code>https://w3id.org/aget/vocab#Initialization_Protocol</code></p>
+<p>A defined startup ritual that loads an agent&#x27;s identity, version, governing constraints, and pending work into operating context before substantive work begins. Ensures each operating interval starts from verified state rather than assumptions; the counterpart termination protocol performs structured closure and handoff.</p>
+<p><em>Example:</em> On &quot;wake up&quot;, an agent runs its initialization protocol: read identity and version, verify governance is loaded, list active work, report readiness.</p>
+<p>related: <a href='#Software_Session'>Software_Session</a></p>
+<p>Forum page: <a href='https://www.gabormelli.com/RKB/Initialization_Protocol'>https://www.gabormelli.com/RKB/Initialization_Protocol</a></p>
+</section>
+<section id='Verification_Test'><h2>Verification Test</h2>
+<p><code>https://w3id.org/aget/vocab#Verification_Test</code></p>
+<p>An executable check paired with a requirement or deliverable that returns pass or fail, distinguishing verified completion from declared completion. Verification tests gate stage boundaries: work is complete when its test passes, not when its author asserts completion.</p>
+<p><em>Example:</em> A release gate requires each advertised capability to pass its verification test — an executable command whose output confirms the artifact exists and behaves as claimed — before the release tag is created.</p>
+<p>Forum page: <a href='https://www.gabormelli.com/RKB/Verification_Test'>https://www.gabormelli.com/RKB/Verification_Test</a></p>
+</section>
+<hr><p>Published from the <a href='https://github.com/aget-framework'>AGET framework</a>.</p></body></html>

@@ -1,0 +1,217 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "vann": "http://purl.org/vocab/vann/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "aget": "https://w3id.org/aget/vocab#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/aget/vocab",
+      "@type": "skos:ConceptScheme",
+      "skos:prefLabel": {
+        "@value": "AGET Framework Vocabulary",
+        "@language": "en"
+      },
+      "dcterms:license": {
+        "@id": "https://www.apache.org/licenses/LICENSE-2.0"
+      },
+      "dcterms:creator": "AGET framework (github.com/aget-framework)",
+      "dcterms:issued": "2026-07-11",
+      "dcterms:modified": "2026-07-11",
+      "vann:preferredNamespacePrefix": "aget",
+      "vann:preferredNamespaceUri": "https://w3id.org/aget/vocab#"
+    },
+    {
+      "@id": "aget:Learning_Document",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "Learning Document",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A structured, persistent, searchable document that captures a single durable lesson extracted from operational experience, classified for reuse either by other agents (framework lessons) or by the human principal (domain lessons). Functions as a unit of organizational memory that persists beyond ephemeral session context; designed for accretion \u2014 many small cross-linked documents rather than monolithic reports.",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/aget/vocab"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "L-doc",
+          "@language": "en"
+        },
+        {
+          "@value": "Lesson-Learned Document",
+          "@language": "en"
+        }
+      ],
+      "skos:example": {
+        "@value": "An agent records a lesson that publication-forum decisions are not publication-standard adoptions, and later sessions cite it before designing a publishing capability.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "aget:Software_Session"
+        }
+      ],
+      "foaf:isPrimaryTopicOf": {
+        "@id": "https://www.gabormelli.com/RKB/Learning_Document"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/aget/vocab"
+      }
+    },
+    {
+      "@id": "aget:Agent_Fleet",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "Agent Fleet",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A bounded set of software agents operating under shared governance, typically with one supervising agent and multiple worker agents. A fleet shares configuration standards, session protocols, and a common upgrade lifecycle while each member retains its own domain scope and memory.",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/aget/vocab"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "Fleet",
+          "@language": "en"
+        }
+      ],
+      "skos:example": {
+        "@value": "A fleet supervisor coordinates version upgrades across its worker agents and verifies each member's deployment before closing a release cycle.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "aget:Initialization_Protocol"
+        }
+      ],
+      "foaf:isPrimaryTopicOf": {
+        "@id": "https://www.gabormelli.com/RKB/Agent_Fleet"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/aget/vocab"
+      }
+    },
+    {
+      "@id": "aget:Software_Session",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "Software Session",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A bounded interval of interactive or autonomous software operation with a defined start and end, its own working context, and lifecycle protocols that establish and wind down that context. For collaborative agents, the session is the unit within which context is loaded, work is performed, and durable artifacts are handed off.",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/aget/vocab"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "Agent Session",
+          "@language": "en"
+        },
+        {
+          "@value": "Work Session",
+          "@language": "en"
+        }
+      ],
+      "skos:example": {
+        "@value": "An agent session opens with an initialization protocol that loads identity and pending work, and closes by writing a handoff file for the next session.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "aget:Initialization_Protocol"
+        },
+        {
+          "@id": "aget:Learning_Document"
+        }
+      ],
+      "foaf:isPrimaryTopicOf": {
+        "@id": "https://www.gabormelli.com/RKB/Software_Session"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/aget/vocab"
+      }
+    },
+    {
+      "@id": "aget:Initialization_Protocol",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "Initialization Protocol",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "A defined startup ritual that loads an agent's identity, version, governing constraints, and pending work into operating context before substantive work begins. Ensures each operating interval starts from verified state rather than assumptions; the counterpart termination protocol performs structured closure and handoff.",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/aget/vocab"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "Wake-Up Protocol",
+          "@language": "en"
+        },
+        {
+          "@value": "Session Initialization",
+          "@language": "en"
+        }
+      ],
+      "skos:example": {
+        "@value": "On \"wake up\", an agent runs its initialization protocol: read identity and version, verify governance is loaded, list active work, report readiness.",
+        "@language": "en"
+      },
+      "skos:related": [
+        {
+          "@id": "aget:Software_Session"
+        }
+      ],
+      "foaf:isPrimaryTopicOf": {
+        "@id": "https://www.gabormelli.com/RKB/Initialization_Protocol"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/aget/vocab"
+      }
+    },
+    {
+      "@id": "aget:Verification_Test",
+      "@type": "skos:Concept",
+      "skos:prefLabel": {
+        "@value": "Verification Test",
+        "@language": "en"
+      },
+      "skos:definition": {
+        "@value": "An executable check paired with a requirement or deliverable that returns pass or fail, distinguishing verified completion from declared completion. Verification tests gate stage boundaries: work is complete when its test passes, not when its author asserts completion.",
+        "@language": "en"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/aget/vocab"
+      },
+      "skos:altLabel": [
+        {
+          "@value": "V-Test",
+          "@language": "en"
+        }
+      ],
+      "skos:example": {
+        "@value": "A release gate requires each advertised capability to pass its verification test \u2014 an executable command whose output confirms the artifact exists and behaves as claimed \u2014 before the release tag is created.",
+        "@language": "en"
+      },
+      "foaf:isPrimaryTopicOf": {
+        "@id": "https://www.gabormelli.com/RKB/Verification_Test"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/aget/vocab"
+      }
+    }
+  ]
+}
