@@ -19,7 +19,7 @@
       },
       "dcterms:creator": "AGET framework (github.com/aget-framework)",
       "dcterms:issued": "2026-07-11",
-      "dcterms:modified": "2026-07-11",
+      "dcterms:modified": "2026-09-13",
       "vann:preferredNamespacePrefix": "aget",
       "vann:preferredNamespaceUri": "https://w3id.org/aget/vocab#"
     },
@@ -249,9 +249,6 @@
           "@id": "aget:Agent_Template_Repository"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Aget_Agent"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }
@@ -292,9 +289,6 @@
           "@id": "aget:Software_Session"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Termination_Protocol"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }
@@ -328,9 +322,6 @@
           "@id": "aget:Verification_Test"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Agent_Capability"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }
@@ -364,9 +355,6 @@
           "@id": "aget:Aget_Agent"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Agent_Template_Repository"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }
@@ -403,9 +391,6 @@
           "@id": "aget:Agent_Capability"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Agent_Skill"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }
@@ -433,9 +418,6 @@
           "@id": "aget:Agent_Skill"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Slash_Command"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }
@@ -469,9 +451,6 @@
           "@id": "aget:Agent_Skill"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Software_Hook"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }
@@ -505,9 +484,6 @@
           "@id": "aget:Learning_Document"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Executable_Knowledge_Ontology"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }
@@ -542,10 +518,7 @@
         {
           "@id": "aget:Termination_Protocol"
         }
-      ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Session_Protocol"
-      }
+      ]
     },
     {
       "@id": "aget:Software_Specification",
@@ -573,9 +546,6 @@
           "@id": "aget:Agent_Capability"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/Software_Specification"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }
@@ -615,9 +585,6 @@
           "@id": "aget:Agent_Fleet"
         }
       ],
-      "foaf:isPrimaryTopicOf": {
-        "@id": "https://www.gabormelli.com/RKB/AGET_Framework"
-      },
       "skos:topConceptOf": {
         "@id": "https://w3id.org/aget/vocab"
       }

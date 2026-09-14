@@ -44,76 +44,65 @@ Formats: <a href='vocab.ttl'>Turtle</a> · <a href='vocab.jsonld'>JSON-LD</a></p
 <p>A configured software agent instance built on the AGET framework, combining an identity (purpose, scope, governing constraints), persistent memory, skill-based capabilities, and session lifecycle protocols. Instantiated from an agent template repository and operated in collaboration with a human principal who holds decision authority over irreversible acts.</p>
 <p><em>Example:</em> A framework-manager agent instance that stewards a public repository: it wakes with its identity and pending work, executes gated plans, and records lessons for future sessions.</p>
 <p>related: <a href='#Agent_Fleet'>Agent_Fleet</a> · related: <a href='#Agent_Template_Repository'>Agent_Template_Repository</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Aget_Agent'>https://www.gabormelli.com/RKB/Aget_Agent</a></p>
 </section>
 <section id='Termination_Protocol'><h2>Termination Protocol</h2>
 <p><code>https://w3id.org/aget/vocab#Termination_Protocol</code></p>
 <p>A defined closure ritual that ends an agent&#x27;s operating interval in a recoverable state: verifying health, capturing pending work, recording session artifacts, and preparing handoff context so the next interval can resume without loss. The counterpart of an initialization protocol.</p>
 <p><em>Example:</em> On &quot;wind down&quot;, an agent checks for uncommitted changes and open plans, writes a session summary with handoff notes, and reports what the next session should pick up.</p>
 <p>related: <a href='#Initialization_Protocol'>Initialization_Protocol</a> · related: <a href='#Software_Session'>Software_Session</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Termination_Protocol'>https://www.gabormelli.com/RKB/Termination_Protocol</a></p>
 </section>
 <section id='Agent_Capability'><h2>Agent Capability</h2>
 <p><code>https://w3id.org/aget/vocab#Agent_Capability</code></p>
 <p>A named, scoped, testable ability of a software agent, expressed as formal requirements with executable verification. Distinct from a capability measure (an assessment of how well a system performs): an agent capability is a specified, versioned artifact whose presence and behavior can be verified by test rather than asserted.</p>
 <p><em>Example:</em> A session-management capability specified as requirements with paired verification tests, such that an upgrade can prove the capability still holds before deployment.</p>
 <p>related: <a href='#Verification_Test'>Verification_Test</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Agent_Capability'>https://www.gabormelli.com/RKB/Agent_Capability</a></p>
 </section>
 <section id='Agent_Template_Repository'><h2>Agent Template Repository</h2>
 <p><code>https://w3id.org/aget/vocab#Agent_Template_Repository</code></p>
 <p>A published, version-controlled repository defining an agent archetype from which agent instances are instantiated, carrying baseline skills, capabilities, session protocols, and governance configuration. Distinct from an agent design pattern (a reusable architectural solution): a template repository is an instantiable artifact with a version lifecycle.</p>
 <p><em>Example:</em> A developer archetype repository that new coding agents are created from, inheriting its session protocols and baseline skills, then diverging with instance-specific memory and scope.</p>
 <p>related: <a href='#Aget_Agent'>Aget_Agent</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Agent_Template_Repository'>https://www.gabormelli.com/RKB/Agent_Template_Repository</a></p>
 </section>
 <section id='Agent_Skill'><h2>Agent Skill</h2>
 <p><code>https://w3id.org/aget/vocab#Agent_Skill</code></p>
 <p>A named, documented, invocable unit of agent procedure — instructions, constraints, and optional supporting scripts — that an agent loads on demand to perform a recurring task in a governed way. Skills are versioned artifacts with declared triggers, distinct from the agent&#x27;s ambient instructions: they encapsulate one procedure behind one name.</p>
 <p><em>Example:</em> A record-lesson skill that an agent invokes to capture a durable learning with consistent structure, classification, and traceability.</p>
 <p>related: <a href='#Slash_Command'>Slash_Command</a> · related: <a href='#Agent_Capability'>Agent_Capability</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Agent_Skill'>https://www.gabormelli.com/RKB/Agent_Skill</a></p>
 </section>
 <section id='Slash_Command'><h2>Slash Command</h2>
 <p><code>https://w3id.org/aget/vocab#Slash_Command</code></p>
 <p>A user-invocable command addressed by a leading slash (such as /review or /deploy) inside a chat, CLI, or agent interface, mapping a short memorable name to a defined procedure or prompt. In agentic coding tools, slash commands are the common invocation surface for agent skills.</p>
 <p><em>Example:</em> Typing /wake-up in an agent CLI invokes the session initialization skill; typing /review in a chat tool triggers a code review procedure.</p>
 <p>related: <a href='#Agent_Skill'>Agent_Skill</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Slash_Command'>https://www.gabormelli.com/RKB/Slash_Command</a></p>
 </section>
 <section id='Software_Hook'><h2>Software Hook</h2>
 <p><code>https://w3id.org/aget/vocab#Software_Hook</code></p>
 <p>A defined extension point at which a software system invokes externally supplied code in response to a lifecycle event, allowing behavior to be added or intercepted without modifying the host system. In agent frameworks, hooks fire on events such as session start or before tool execution, and are the structural surface for tracing and access control.</p>
 <p><em>Example:</em> A pre-tool-use hook that logs each consultation and denies callers not on an allowlist, enforcing policy even when higher-level configuration is inert.</p>
 <p>related: <a href='#Agent_Skill'>Agent_Skill</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Software_Hook'>https://www.gabormelli.com/RKB/Software_Hook</a></p>
 </section>
 <section id='Executable_Knowledge_Ontology'><h2>Executable Knowledge Ontology</h2>
 <p><code>https://w3id.org/aget/vocab#Executable_Knowledge_Ontology</code></p>
 <p>A structured vocabulary that classifies knowledge artifacts by how executable they are, organizing them along axes such as abstraction level (from algorithm to concrete execution), determinism, and reusability. Bridges documentation and automation: entries are classified by whether a machine can act on them directly, with parameters, or only via human interpretation.</p>
 <p><em>Example:</em> Classifying a deployment procedure as parameterized-executable (a script with inputs) versus a design rationale as human-interpretable knowledge.</p>
 <p>related: <a href='#Learning_Document'>Learning_Document</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Executable_Knowledge_Ontology'>https://www.gabormelli.com/RKB/Executable_Knowledge_Ontology</a></p>
 </section>
 <section id='Session_Protocol'><h2>Session Protocol</h2>
 <p><code>https://w3id.org/aget/vocab#Session_Protocol</code></p>
 <p>A defined, repeatable procedure governing a phase of a software session&#x27;s lifecycle — initialization, checkpointing, health verification, or termination — so that session state transitions are performed by rule rather than improvisation.</p>
 <p><em>Example:</em> An agent&#x27;s session protocols include a wake-up procedure, a mid-session checkpoint save, and a wind-down closure with handoff.</p>
 <p>broader: <a href='#Software_Session'>Software_Session</a> · related: <a href='#Initialization_Protocol'>Initialization_Protocol</a> · related: <a href='#Termination_Protocol'>Termination_Protocol</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Session_Protocol'>https://www.gabormelli.com/RKB/Session_Protocol</a></p>
 </section>
 <section id='Software_Specification'><h2>Software Specification</h2>
 <p><code>https://w3id.org/aget/vocab#Software_Specification</code></p>
 <p>A contract-level document that formalizes intended software behavior as testable, enforceable requirements, typically in a controlled syntax with unique requirement identifiers and paired verification tests. In a two-level model, specifications formalize human-level requirements; when behavior fails, the specification is examined first, since code can correctly implement a wrong specification.</p>
 <p><em>Example:</em> A session-lifecycle specification whose requirements each carry an identifier, a controlled-syntax statement, and an executable verification test.</p>
 <p>related: <a href='#Verification_Test'>Verification_Test</a> · related: <a href='#Agent_Capability'>Agent_Capability</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Software_Specification'>https://www.gabormelli.com/RKB/Software_Specification</a></p>
 </section>
 <section id='AGET_Framework'><h2>AGET Framework</h2>
 <p><code>https://w3id.org/aget/vocab#AGET_Framework</code></p>
 <p>A configuration and lifecycle management framework for CLI-based human-AI collaborative coding agents, providing agent identity, persistent memory, skill- based capabilities, session protocols, template repositories, and governance constraints with approval gates. Distributed as a public reference implementation with instantiable agent templates.</p>
 <p><em>Example:</em> An engineer instantiates a worker agent from an AGET template, and the agent thereafter wakes, works within gated plans, records lessons, and winds down under the framework&#x27;s session protocols.</p>
 <p>related: <a href='#Aget_Agent'>Aget_Agent</a> · related: <a href='#Agent_Template_Repository'>Agent_Template_Repository</a> · related: <a href='#Agent_Fleet'>Agent_Fleet</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/AGET_Framework'>https://www.gabormelli.com/RKB/AGET_Framework</a></p>
 </section>
 <hr><p>Published from the <a href='https://github.com/aget-framework'>AGET framework</a>.</p></body></html>
