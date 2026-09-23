@@ -107,4 +107,52 @@ Formats: <a href='vocab.ttl'>Turtle</a> · <a href='vocab.jsonld'>JSON-LD</a></p
 <p>related: <a href='#Aget_Agent'>Aget_Agent</a> · related: <a href='#Agent_Template_Repository'>Agent_Template_Repository</a> · related: <a href='#Agent_Fleet'>Agent_Fleet</a></p>
 <p>Forum page: <a href='https://www.gabormelli.com/RKB/AGET_Framework'>https://www.gabormelli.com/RKB/AGET_Framework</a></p>
 </section>
+<section id='Ontology_CI_Gate'><h2>Ontology CI Gate</h2>
+<p><code>https://w3id.org/aget/vocab#Ontology_CI_Gate</code></p>
+<p>A check that runs a controlled vocabulary&#x27;s quality validators automatically on every proposed change, and blocks the change from being merged when a validator reports a defect. Without it, validation depends on someone remembering to run it, so a vocabulary can accumulate defects indefinitely while each individual change is believed to have been checked — the belief and the measurement drift apart with nothing to reconcile them.</p>
+<p><em>Example:</em> A project keeps a link validator in its repository and runs it by hand at the end of each expansion cycle. Between cycles the vocabulary is unmeasured, and a defect introduced early is found only when someone next remembers. Wiring the same validator into the merge check converts the measurement from a habit into a precondition.</p>
+<p>related: <a href='#Reciprocal_Link_Validator'>Reciprocal_Link_Validator</a> · related: <a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author_Asserted_Cleanliness_Anti_Pattern</a> · related: <a href='#Reflexive_Validation_Methodology'>Reflexive_Validation_Methodology</a></p>
+</section>
+<section id='Denominator_Disclosure'><h2>Denominator Disclosure</h2>
+<p><code>https://w3id.org/aget/vocab#Denominator_Disclosure</code></p>
+<p>The obligation to state the population a rate or count was computed over, at the point the figure is asserted. Naming the instrument that produced a number answers how it was measured but never what it was measured over, and the two diverge silently. An instrument can be correct and still range over the wrong set, yielding a figure that is precise, reproducible and wrong — and undetectably so, because nothing in the figure records the set it came from.</p>
+<p><em>Example:</em> A census of managed agents taken by directory pattern returned four different totals on four occasions, each defensible from its own listing and none matching the authoritative register. The instrument was not at fault. No figure had stated the set it ranged over, so no two of them could be compared, and the disagreement went unnoticed.</p>
+<p>related: <a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author_Asserted_Cleanliness_Anti_Pattern</a></p>
+</section>
+<section id='Reciprocal_Link_Validator'><h2>Reciprocal Link Validator</h2>
+<p><code>https://w3id.org/aget/vocab#Reciprocal_Link_Validator</code></p>
+<p>A validator that checks whether the associative and hierarchical links in a concept scheme are declared symmetrically: that every concept named as related by another names it in return, and that every broader link has a matching narrower link on the parent it points to. It exists to catch the dominant failure mode of vocabularies maintained by addition, where a new concept is linked forward to existing ones and the corresponding edits to those existing ones are never made.</p>
+<p><em>Example:</em> An author adds a concept and lists six existing concepts as related to it. Unless each of those six is also edited, the vocabulary asserts the relationship in one direction only, and a reader arriving from any of the six will never reach the new concept.</p>
+<p>related: <a href='#Ontology_CI_Gate'>Ontology_CI_Gate</a> · related: <a href='#Forward_Only_Link_Defect'>Forward_Only_Link_Defect</a> · related: <a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author_Asserted_Cleanliness_Anti_Pattern</a> · related: <a href='#Reflexive_Validation_Methodology'>Reflexive_Validation_Methodology</a></p>
+</section>
+<section id='Forward_Only_Link_Defect'><h2>Forward-Only Link Defect</h2>
+<p><code>https://w3id.org/aget/vocab#Forward_Only_Link_Defect</code></p>
+<p>A defect in a concept scheme where a link between two concepts is declared in one direction only, because the author edited the concept being added and not the existing concepts it points at. The defect is invisible from the concept that was authored, where the work looks finished, and shows up only when the vocabulary is read from the other end. That asymmetry of visibility is why it accumulates rather than being caught.</p>
+<p><em>Example:</em> Across six consecutive expansion cycles of one vocabulary, links between concepts in the same cluster were made symmetric while being written, and links crossing clusters were deferred to a cleanup that was never scheduled. The deferred edits grew into the vocabulary&#x27;s single largest defect class.</p>
+<p>related: <a href='#Reciprocal_Link_Validator'>Reciprocal_Link_Validator</a></p>
+</section>
+<section id='Fail_Stop_Behavior'><h2>Fail-Stop Behavior</h2>
+<p><code>https://w3id.org/aget/vocab#Fail_Stop_Behavior</code></p>
+<p>A failure semantics in which a faulty component halts before producing any externally visible erroneous output, so that other components can reliably detect the failure and begin recovery. It is the strongest well-behaved failure class — detectable and non-contagious — and the property that makes a missing component safe: a check that cannot run must report that it could not run, because a silent absence reads as success.</p>
+<p><em>Example:</em> An agent meeting unambiguously corrupted state halts cleanly instead of continuing and emitting plausible output derived from it. A supervisor can then trust that a halted worker sent nothing downstream. The contrasting case is arbitrary behavior, where a faulty component keeps producing output that cannot be distinguished from correct output.</p>
+<p>related: <a href='#Failure_Detector'>Failure_Detector</a></p>
+</section>
+<section id='Failure_Detector'><h2>Failure Detector</h2>
+<p><code>https://w3id.org/aget/vocab#Failure_Detector</code></p>
+<p>An abstract oracle in a distributed system that gives each process suspicion information about the others, classified by completeness (every crashed process is eventually suspected) and accuracy (correct processes are not suspected). Chandra and Toueg showed that the eventually-strong class is the weakest one that can solve consensus given a majority of correct processes, which sets a hard limit on what any supervisor can know about a worker it cannot see.</p>
+<p><em>Example:</em> Heartbeat-based liveness checking is inherently unreliable: a timeout cannot separate a crashed process from a slow one. Any liveness claim therefore carries a false-positive rate, and an escalation policy has to handle that rate rather than assume it away.</p>
+<p>related: <a href='#Fail_Stop_Behavior'>Fail_Stop_Behavior</a></p>
+</section>
+<section id='Author_Asserted_Cleanliness_Anti_Pattern'><h2>Author-Asserted Cleanliness Anti-Pattern</h2>
+<p><code>https://w3id.org/aget/vocab#Author_Asserted_Cleanliness_Anti_Pattern</code></p>
+<p>A failure mode in which an author, or a tool acting on their behalf, reports a vocabulary or artifact as free of defects on the strength of confidence rather than validator output. The harm is not that the claim is often wrong but that it is indistinguishable in form from a measured one, so it displaces the measurement it stands in for: a reader downstream treats an unmade claim as a verified one, and nothing in the record distinguishes them.</p>
+<p><em>Example:</em> A procedure ended with the author recording &quot;no orphans, no dangling references, all links reciprocal&quot;. Replacing that line with a requirement to paste the validator&#x27;s actual output changed the reported state on the very first run.</p>
+<p>related: <a href='#Ontology_CI_Gate'>Ontology_CI_Gate</a> · related: <a href='#Reciprocal_Link_Validator'>Reciprocal_Link_Validator</a> · related: <a href='#Denominator_Disclosure'>Denominator_Disclosure</a></p>
+</section>
+<section id='Reflexive_Validation_Methodology'><h2>Reflexive Validation Methodology</h2>
+<p><code>https://w3id.org/aget/vocab#Reflexive_Validation_Methodology</code></p>
+<p>A methodology for validating a vocabulary or a tool by turning it on itself — using the expansion procedure to expand the vocabulary that describes expansion, or the validation concepts to validate the validator. The reflexive case is diagnostic because it is the one case whose authors cannot argue is unrepresentative: a procedure that fails on its own subject matter has been falsified by the least contrived example available to it.</p>
+<p><em>Example:</em> A vocabulary was expanded with concepts describing validation, and its own validators were then run over the result. The defects that surfaced were in the validators&#x27; coverage rather than in the new concepts — a gap that expansions into unrelated domains had never exposed.</p>
+<p>related: <a href='#Ontology_CI_Gate'>Ontology_CI_Gate</a> · related: <a href='#Reciprocal_Link_Validator'>Reciprocal_Link_Validator</a></p>
+</section>
 <hr><p>Published from the <a href='https://github.com/aget-framework'>AGET framework</a>.</p></body></html>

@@ -174,3 +174,91 @@ aget:AGET_Framework a skos:Concept ;
     foaf:isPrimaryTopicOf <https://www.gabormelli.com/RKB/AGET_Framework> ;
     skos:topConceptOf <https://w3id.org/aget/vocab> ;
     skos:inScheme <https://w3id.org/aget/vocab> .
+
+aget:Ontology_CI_Gate a skos:Concept ;
+    skos:prefLabel "Ontology CI Gate"@en ;
+    skos:altLabel "Continuous Validation Gate"@en ;
+    skos:altLabel "Pre-Merge Ontology Check"@en ;
+    skos:definition "A check that runs a controlled vocabulary's quality validators automatically on every proposed change, and blocks the change from being merged when a validator reports a defect. Without it, validation depends on someone remembering to run it, so a vocabulary can accumulate defects indefinitely while each individual change is believed to have been checked — the belief and the measurement drift apart with nothing to reconcile them."@en ;
+    skos:example "A project keeps a link validator in its repository and runs it by hand at the end of each expansion cycle. Between cycles the vocabulary is unmeasured, and a defect introduced early is found only when someone next remembers. Wiring the same validator into the merge check converts the measurement from a habit into a precondition."@en ;
+    skos:related aget:Reciprocal_Link_Validator ;
+    skos:related aget:Author_Asserted_Cleanliness_Anti_Pattern ;
+    skos:related aget:Reflexive_Validation_Methodology ;
+    skos:topConceptOf <https://w3id.org/aget/vocab> ;
+    skos:inScheme <https://w3id.org/aget/vocab> .
+
+aget:Denominator_Disclosure a skos:Concept ;
+    skos:prefLabel "Denominator Disclosure"@en ;
+    skos:altLabel "Population Naming"@en ;
+    skos:altLabel "Stated Denominator"@en ;
+    skos:definition "The obligation to state the population a rate or count was computed over, at the point the figure is asserted. Naming the instrument that produced a number answers how it was measured but never what it was measured over, and the two diverge silently. An instrument can be correct and still range over the wrong set, yielding a figure that is precise, reproducible and wrong — and undetectably so, because nothing in the figure records the set it came from."@en ;
+    skos:example "A census of managed agents taken by directory pattern returned four different totals on four occasions, each defensible from its own listing and none matching the authoritative register. The instrument was not at fault. No figure had stated the set it ranged over, so no two of them could be compared, and the disagreement went unnoticed."@en ;
+    skos:related aget:Author_Asserted_Cleanliness_Anti_Pattern ;
+    skos:topConceptOf <https://w3id.org/aget/vocab> ;
+    skos:inScheme <https://w3id.org/aget/vocab> .
+
+aget:Reciprocal_Link_Validator a skos:Concept ;
+    skos:prefLabel "Reciprocal Link Validator"@en ;
+    skos:altLabel "Symmetric-Link Checker"@en ;
+    skos:altLabel "Three-Lane Reciprocity Validator"@en ;
+    skos:definition "A validator that checks whether the associative and hierarchical links in a concept scheme are declared symmetrically: that every concept named as related by another names it in return, and that every broader link has a matching narrower link on the parent it points to. It exists to catch the dominant failure mode of vocabularies maintained by addition, where a new concept is linked forward to existing ones and the corresponding edits to those existing ones are never made."@en ;
+    skos:example "An author adds a concept and lists six existing concepts as related to it. Unless each of those six is also edited, the vocabulary asserts the relationship in one direction only, and a reader arriving from any of the six will never reach the new concept."@en ;
+    skos:related aget:Ontology_CI_Gate ;
+    skos:related aget:Forward_Only_Link_Defect ;
+    skos:related aget:Author_Asserted_Cleanliness_Anti_Pattern ;
+    skos:related aget:Reflexive_Validation_Methodology ;
+    skos:topConceptOf <https://w3id.org/aget/vocab> ;
+    skos:inScheme <https://w3id.org/aget/vocab> .
+
+aget:Forward_Only_Link_Defect a skos:Concept ;
+    skos:prefLabel "Forward-Only Link Defect"@en ;
+    skos:altLabel "Asymmetric Reciprocity Defect"@en ;
+    skos:altLabel "Lane-1 / Lane-2 Reciprocity Defect"@en ;
+    skos:definition "A defect in a concept scheme where a link between two concepts is declared in one direction only, because the author edited the concept being added and not the existing concepts it points at. The defect is invisible from the concept that was authored, where the work looks finished, and shows up only when the vocabulary is read from the other end. That asymmetry of visibility is why it accumulates rather than being caught."@en ;
+    skos:example "Across six consecutive expansion cycles of one vocabulary, links between concepts in the same cluster were made symmetric while being written, and links crossing clusters were deferred to a cleanup that was never scheduled. The deferred edits grew into the vocabulary's single largest defect class."@en ;
+    skos:related aget:Reciprocal_Link_Validator ;
+    skos:topConceptOf <https://w3id.org/aget/vocab> ;
+    skos:inScheme <https://w3id.org/aget/vocab> .
+
+aget:Fail_Stop_Behavior a skos:Concept ;
+    skos:prefLabel "Fail-Stop Behavior"@en ;
+    skos:altLabel "Fail-Stop Processor"@en ;
+    skos:altLabel "Fail-Stop Failure Mode"@en ;
+    skos:definition "A failure semantics in which a faulty component halts before producing any externally visible erroneous output, so that other components can reliably detect the failure and begin recovery. It is the strongest well-behaved failure class — detectable and non-contagious — and the property that makes a missing component safe: a check that cannot run must report that it could not run, because a silent absence reads as success."@en ;
+    skos:example "An agent meeting unambiguously corrupted state halts cleanly instead of continuing and emitting plausible output derived from it. A supervisor can then trust that a halted worker sent nothing downstream. The contrasting case is arbitrary behavior, where a faulty component keeps producing output that cannot be distinguished from correct output."@en ;
+    skos:related aget:Failure_Detector ;
+    skos:topConceptOf <https://w3id.org/aget/vocab> ;
+    skos:inScheme <https://w3id.org/aget/vocab> .
+
+aget:Failure_Detector a skos:Concept ;
+    skos:prefLabel "Failure Detector"@en ;
+    skos:altLabel "Unreliable Failure Detector"@en ;
+    skos:altLabel "Crash Detector"@en ;
+    skos:definition "An abstract oracle in a distributed system that gives each process suspicion information about the others, classified by completeness (every crashed process is eventually suspected) and accuracy (correct processes are not suspected). Chandra and Toueg showed that the eventually-strong class is the weakest one that can solve consensus given a majority of correct processes, which sets a hard limit on what any supervisor can know about a worker it cannot see."@en ;
+    skos:example "Heartbeat-based liveness checking is inherently unreliable: a timeout cannot separate a crashed process from a slow one. Any liveness claim therefore carries a false-positive rate, and an escalation policy has to handle that rate rather than assume it away."@en ;
+    skos:related aget:Fail_Stop_Behavior ;
+    skos:topConceptOf <https://w3id.org/aget/vocab> ;
+    skos:inScheme <https://w3id.org/aget/vocab> .
+
+aget:Author_Asserted_Cleanliness_Anti_Pattern a skos:Concept ;
+    skos:prefLabel "Author-Asserted Cleanliness Anti-Pattern"@en ;
+    skos:altLabel "Assert-Before-Verify"@en ;
+    skos:altLabel "Confidence-As-Measurement"@en ;
+    skos:definition "A failure mode in which an author, or a tool acting on their behalf, reports a vocabulary or artifact as free of defects on the strength of confidence rather than validator output. The harm is not that the claim is often wrong but that it is indistinguishable in form from a measured one, so it displaces the measurement it stands in for: a reader downstream treats an unmade claim as a verified one, and nothing in the record distinguishes them."@en ;
+    skos:example "A procedure ended with the author recording "no orphans, no dangling references, all links reciprocal". Replacing that line with a requirement to paste the validator's actual output changed the reported state on the very first run."@en ;
+    skos:related aget:Ontology_CI_Gate ;
+    skos:related aget:Reciprocal_Link_Validator ;
+    skos:related aget:Denominator_Disclosure ;
+    skos:topConceptOf <https://w3id.org/aget/vocab> ;
+    skos:inScheme <https://w3id.org/aget/vocab> .
+
+aget:Reflexive_Validation_Methodology a skos:Concept ;
+    skos:prefLabel "Reflexive Validation Methodology"@en ;
+    skos:altLabel "Self-Test Vocabulary Pattern"@en ;
+    skos:altLabel "Tool-As-Own-Subject"@en ;
+    skos:definition "A methodology for validating a vocabulary or a tool by turning it on itself — using the expansion procedure to expand the vocabulary that describes expansion, or the validation concepts to validate the validator. The reflexive case is diagnostic because it is the one case whose authors cannot argue is unrepresentative: a procedure that fails on its own subject matter has been falsified by the least contrived example available to it."@en ;
+    skos:example "A vocabulary was expanded with concepts describing validation, and its own validators were then run over the result. The defects that surfaced were in the validators' coverage rather than in the new concepts — a gap that expansions into unrelated domains had never exposed."@en ;
+    skos:related aget:Ontology_CI_Gate ;
+    skos:related aget:Reciprocal_Link_Validator ;
+    skos:topConceptOf <https://w3id.org/aget/vocab> ;
+    skos:inScheme <https://w3id.org/aget/vocab> .
