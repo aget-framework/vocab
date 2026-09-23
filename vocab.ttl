@@ -10,9 +10,10 @@
     dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
     dcterms:creator "AGET framework (github.com/aget-framework)" ;
     dcterms:issued "2026-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
-    dcterms:modified "2026-09-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2026-09-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
     vann:preferredNamespacePrefix "aget" ;
-    vann:preferredNamespaceUri "https://w3id.org/aget/vocab#" .
+    vann:preferredNamespaceUri "https://w3id.org/aget/vocab#" ;
+    dcterms:provenance "aget-publish-engine; emission-rule v2"@en .
 
 aget:Learning_Document a skos:Concept ;
     skos:prefLabel "Learning Document"@en ;
@@ -131,6 +132,7 @@ aget:Software_Hook a skos:Concept ;
     skos:definition "A defined extension point at which a software system invokes externally supplied code in response to a lifecycle event, allowing behavior to be added or intercepted without modifying the host system. In agent frameworks, hooks fire on events such as session start or before tool execution, and are the structural surface for tracing and access control."@en ;
     skos:example "A pre-tool-use hook that logs each consultation and denies callers not on an allowlist, enforcing policy even when higher-level configuration is inert."@en ;
     skos:related aget:Agent_Skill ;
+    foaf:isPrimaryTopicOf <https://www.gabormelli.com/RKB/Software_Hook> ;
     skos:topConceptOf <https://w3id.org/aget/vocab> ;
     skos:inScheme <https://w3id.org/aget/vocab> .
 
@@ -169,5 +171,6 @@ aget:AGET_Framework a skos:Concept ;
     skos:related aget:Aget_Agent ;
     skos:related aget:Agent_Template_Repository ;
     skos:related aget:Agent_Fleet ;
+    foaf:isPrimaryTopicOf <https://www.gabormelli.com/RKB/AGET_Framework> ;
     skos:topConceptOf <https://w3id.org/aget/vocab> ;
     skos:inScheme <https://w3id.org/aget/vocab> .
