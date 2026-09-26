@@ -243,6 +243,10 @@
       },
       "skos:altLabel": [
         {
+          "@value": "Aget",
+          "@language": "en"
+        },
+        {
           "@value": "AGET Agent",
           "@language": "en"
         },

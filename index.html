@@ -1,158 +1,226 @@
 <!doctype html><html lang='en'><head><meta charset='utf-8'>
-<title>AGET Framework Vocabulary</title></head><body>
-<h1>AGET Framework Vocabulary</h1>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>AGET Framework Vocabulary</title>
+<meta name='description' content='Published concepts from the AGET framework — configuration and lifecycle management for CLI-based human-AI collaborative coding agents.'>
+<style>
+:root{--bg:#fdfdfc;--fg:#1d1d1b;--muted:#5d5d58;--line:#e4e3de;--card:#ffffff;--accent:#1f5fa8;--mark:#fff4c2}
+@media (prefers-color-scheme:dark){:root{--bg:#171716;--fg:#e9e8e3;--muted:#a3a29b;--line:#34332f;--card:#1f1f1d;--accent:#7fb2ee;--mark:#3d3413}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:72ch;margin:0 auto;padding:2rem 1rem 4rem}
+a{color:var(--accent)} code{font-size:.85em;overflow-wrap:anywhere}
+header p{color:var(--muted);margin:.25rem 0}
+nav{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:.75rem 0;margin:1.25rem 0 2rem}
+nav ul{columns:2 16ch;margin:0;padding-left:1.25rem;list-style:none} nav li{break-inside:avoid;margin:.1rem 0}
+nav .alt{color:var(--muted);font-size:.85em}
+section{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1rem 1.25rem;margin:0 0 1rem;scroll-margin-top:1rem}
+section:target{outline:3px solid var(--accent);background:var(--mark)}
+section h2{margin:.1rem 0 .2rem;font-size:1.3rem}
+.also{color:var(--muted);margin:0 0 .5rem;font-size:.95em}
+.uri{color:var(--muted);margin:.25rem 0 .75rem}
+.def{font-size:1.05em}
+.meta{color:var(--muted);font-size:.95em}
+footer{color:var(--muted);font-size:.9em;border-top:1px solid var(--line);margin-top:2rem;padding-top:1rem}
+</style></head><body><main>
+<header><h1>AGET Framework Vocabulary</h1>
 <p>Published concepts from the AGET framework — configuration and lifecycle management for CLI-based human-AI collaborative coding agents.</p>
-<p>Namespace: <code>https://w3id.org/aget/vocab#</code> · 
-License: <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache-2.0</a> · 
-Formats: <a href='vocab.ttl'>Turtle</a> · <a href='vocab.jsonld'>JSON-LD</a></p><hr>
-<section id='Learning_Document'><h2>Learning Document</h2>
-<p><code>https://w3id.org/aget/vocab#Learning_Document</code></p>
-<p>A structured, persistent, searchable document that captures a single durable lesson extracted from operational experience, classified for reuse either by other agents (framework lessons) or by the human principal (domain lessons). Functions as a unit of organizational memory that persists beyond ephemeral session context; designed for accretion — many small cross-linked documents rather than monolithic reports.</p>
-<p><em>Example:</em> An agent records a lesson that publication-forum decisions are not publication- standard adoptions, and later sessions cite it before designing a publishing capability.</p>
-<p>related: <a href='#Software_Session'>Software_Session</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Learning_Document'>https://www.gabormelli.com/RKB/Learning_Document</a></p>
+<p>24 published terms · Namespace <code>https://w3id.org/aget/vocab#</code></p></header>
+<nav aria-label='Terms'><ul>
+<li><a href='#Agent_Capability'>Agent Capability</a> <span class='alt'>(Capability Artifact)</span></li>
+<li><a href='#Agent_Fleet'>Agent Fleet</a> <span class='alt'>(Fleet)</span></li>
+<li><a href='#Agent_Skill'>Agent Skill</a> <span class='alt'>(Skill Artifact)</span></li>
+<li><a href='#Agent_Template_Repository'>Agent Template Repository</a> <span class='alt'>(Agent Archetype Repository)</span></li>
+<li><a href='#Aget_Agent'>Aget Agent</a> <span class='alt'>(Aget, AGET Agent, AGET Instance)</span></li>
+<li><a href='#AGET_Framework'>AGET Framework</a> <span class='alt'>(AGET)</span></li>
+<li><a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author-Asserted Cleanliness Anti-Pattern</a> <span class='alt'>(Assert-Before-Verify, Confidence-As-Measurement)</span></li>
+<li><a href='#Denominator_Disclosure'>Denominator Disclosure</a> <span class='alt'>(Population Naming, Stated Denominator)</span></li>
+<li><a href='#Executable_Knowledge_Ontology'>Executable Knowledge Ontology</a> <span class='alt'>(EKO)</span></li>
+<li><a href='#Fail_Stop_Behavior'>Fail-Stop Behavior</a> <span class='alt'>(Fail-Stop Processor, Fail-Stop Failure Mode)</span></li>
+<li><a href='#Failure_Detector'>Failure Detector</a> <span class='alt'>(Unreliable Failure Detector, Crash Detector)</span></li>
+<li><a href='#Forward_Only_Link_Defect'>Forward-Only Link Defect</a> <span class='alt'>(Asymmetric Reciprocity Defect, Lane-1 / Lane-2 Reciprocity Defect)</span></li>
+<li><a href='#Initialization_Protocol'>Initialization Protocol</a> <span class='alt'>(Wake-Up Protocol, Session Initialization)</span></li>
+<li><a href='#Learning_Document'>Learning Document</a> <span class='alt'>(L-doc, Lesson-Learned Document)</span></li>
+<li><a href='#Ontology_CI_Gate'>Ontology CI Gate</a> <span class='alt'>(Continuous Validation Gate, Pre-Merge Ontology Check)</span></li>
+<li><a href='#Reciprocal_Link_Validator'>Reciprocal Link Validator</a> <span class='alt'>(Symmetric-Link Checker, Three-Lane Reciprocity Validator)</span></li>
+<li><a href='#Reflexive_Validation_Methodology'>Reflexive Validation Methodology</a> <span class='alt'>(Self-Test Vocabulary Pattern, Tool-As-Own-Subject)</span></li>
+<li><a href='#Session_Protocol'>Session Protocol</a></li>
+<li><a href='#Slash_Command'>Slash Command</a></li>
+<li><a href='#Software_Hook'>Software Hook</a> <span class='alt'>(Hook)</span></li>
+<li><a href='#Software_Session'>Software Session</a> <span class='alt'>(Agent Session, Work Session)</span></li>
+<li><a href='#Software_Specification'>Software Specification</a></li>
+<li><a href='#Termination_Protocol'>Termination Protocol</a> <span class='alt'>(Wind-Down Protocol, Session Closure Protocol)</span></li>
+<li><a href='#Verification_Test'>Verification Test</a> <span class='alt'>(V-Test)</span></li>
+</ul></nav>
+<section id='Agent_Capability'><h2>Agent Capability</h2>
+<p class='also'>Also called: Capability Artifact</p>
+<p class='def'>A named, scoped, testable ability of a software agent, expressed as formal requirements with executable verification. Distinct from a capability measure (an assessment of how well a system performs): an agent capability is a specified, versioned artifact whose presence and behavior can be verified by test rather than asserted.</p>
+<p><em>Example:</em> A session-management capability specified as requirements with paired verification tests, such that an upgrade can prove the capability still holds before deployment.</p>
+<p class='meta'>Related: <a href='#Verification_Test'>Verification Test</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Agent_Capability</code></p>
 </section>
 <section id='Agent_Fleet'><h2>Agent Fleet</h2>
-<p><code>https://w3id.org/aget/vocab#Agent_Fleet</code></p>
-<p>A bounded set of software agents operating under shared governance, typically with one supervising agent and multiple worker agents. A fleet shares configuration standards, session protocols, and a common upgrade lifecycle while each member retains its own domain scope and memory.</p>
+<p class='also'>Also called: Fleet</p>
+<p class='def'>A bounded set of software agents operating under shared governance, typically with one supervising agent and multiple worker agents. A fleet shares configuration standards, session protocols, and a common upgrade lifecycle while each member retains its own domain scope and memory.</p>
 <p><em>Example:</em> A fleet supervisor coordinates version upgrades across its worker agents and verifies each member&#x27;s deployment before closing a release cycle.</p>
-<p>related: <a href='#Initialization_Protocol'>Initialization_Protocol</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Agent_Fleet'>https://www.gabormelli.com/RKB/Agent_Fleet</a></p>
-</section>
-<section id='Software_Session'><h2>Software Session</h2>
-<p><code>https://w3id.org/aget/vocab#Software_Session</code></p>
-<p>A bounded interval of interactive or autonomous software operation with a defined start and end, its own working context, and lifecycle protocols that establish and wind down that context. For collaborative agents, the session is the unit within which context is loaded, work is performed, and durable artifacts are handed off.</p>
-<p><em>Example:</em> An agent session opens with an initialization protocol that loads identity and pending work, and closes by writing a handoff file for the next session.</p>
-<p>related: <a href='#Initialization_Protocol'>Initialization_Protocol</a> · related: <a href='#Learning_Document'>Learning_Document</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Software_Session'>https://www.gabormelli.com/RKB/Software_Session</a></p>
-</section>
-<section id='Initialization_Protocol'><h2>Initialization Protocol</h2>
-<p><code>https://w3id.org/aget/vocab#Initialization_Protocol</code></p>
-<p>A defined startup ritual that loads an agent&#x27;s identity, version, governing constraints, and pending work into operating context before substantive work begins. Ensures each operating interval starts from verified state rather than assumptions; the counterpart termination protocol performs structured closure and handoff.</p>
-<p><em>Example:</em> On &quot;wake up&quot;, an agent runs its initialization protocol: read identity and version, verify governance is loaded, list active work, report readiness.</p>
-<p>related: <a href='#Software_Session'>Software_Session</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Initialization_Protocol'>https://www.gabormelli.com/RKB/Initialization_Protocol</a></p>
-</section>
-<section id='Verification_Test'><h2>Verification Test</h2>
-<p><code>https://w3id.org/aget/vocab#Verification_Test</code></p>
-<p>An executable check paired with a requirement or deliverable that returns pass or fail, distinguishing verified completion from declared completion. Verification tests gate stage boundaries: work is complete when its test passes, not when its author asserts completion.</p>
-<p><em>Example:</em> A release gate requires each advertised capability to pass its verification test — an executable command whose output confirms the artifact exists and behaves as claimed — before the release tag is created.</p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Verification_Test'>https://www.gabormelli.com/RKB/Verification_Test</a></p>
-</section>
-<section id='Aget_Agent'><h2>Aget Agent</h2>
-<p><code>https://w3id.org/aget/vocab#Aget_Agent</code></p>
-<p>A configured software agent instance built on the AGET framework, combining an identity (purpose, scope, governing constraints), persistent memory, skill-based capabilities, and session lifecycle protocols. Instantiated from an agent template repository and operated in collaboration with a human principal who holds decision authority over irreversible acts.</p>
-<p><em>Example:</em> A framework-manager agent instance that stewards a public repository: it wakes with its identity and pending work, executes gated plans, and records lessons for future sessions.</p>
-<p>related: <a href='#Agent_Fleet'>Agent_Fleet</a> · related: <a href='#Agent_Template_Repository'>Agent_Template_Repository</a></p>
-</section>
-<section id='Termination_Protocol'><h2>Termination Protocol</h2>
-<p><code>https://w3id.org/aget/vocab#Termination_Protocol</code></p>
-<p>A defined closure ritual that ends an agent&#x27;s operating interval in a recoverable state: verifying health, capturing pending work, recording session artifacts, and preparing handoff context so the next interval can resume without loss. The counterpart of an initialization protocol.</p>
-<p><em>Example:</em> On &quot;wind down&quot;, an agent checks for uncommitted changes and open plans, writes a session summary with handoff notes, and reports what the next session should pick up.</p>
-<p>related: <a href='#Initialization_Protocol'>Initialization_Protocol</a> · related: <a href='#Software_Session'>Software_Session</a></p>
-</section>
-<section id='Agent_Capability'><h2>Agent Capability</h2>
-<p><code>https://w3id.org/aget/vocab#Agent_Capability</code></p>
-<p>A named, scoped, testable ability of a software agent, expressed as formal requirements with executable verification. Distinct from a capability measure (an assessment of how well a system performs): an agent capability is a specified, versioned artifact whose presence and behavior can be verified by test rather than asserted.</p>
-<p><em>Example:</em> A session-management capability specified as requirements with paired verification tests, such that an upgrade can prove the capability still holds before deployment.</p>
-<p>related: <a href='#Verification_Test'>Verification_Test</a></p>
-</section>
-<section id='Agent_Template_Repository'><h2>Agent Template Repository</h2>
-<p><code>https://w3id.org/aget/vocab#Agent_Template_Repository</code></p>
-<p>A published, version-controlled repository defining an agent archetype from which agent instances are instantiated, carrying baseline skills, capabilities, session protocols, and governance configuration. Distinct from an agent design pattern (a reusable architectural solution): a template repository is an instantiable artifact with a version lifecycle.</p>
-<p><em>Example:</em> A developer archetype repository that new coding agents are created from, inheriting its session protocols and baseline skills, then diverging with instance-specific memory and scope.</p>
-<p>related: <a href='#Aget_Agent'>Aget_Agent</a></p>
+<p class='meta'>Related: <a href='#Initialization_Protocol'>Initialization Protocol</a></p>
+<p class='meta'><a href='https://www.gabormelli.com/RKB/Agent_Fleet'>Longer article on GM-RKB →</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Agent_Fleet</code></p>
 </section>
 <section id='Agent_Skill'><h2>Agent Skill</h2>
-<p><code>https://w3id.org/aget/vocab#Agent_Skill</code></p>
-<p>A named, documented, invocable unit of agent procedure — instructions, constraints, and optional supporting scripts — that an agent loads on demand to perform a recurring task in a governed way. Skills are versioned artifacts with declared triggers, distinct from the agent&#x27;s ambient instructions: they encapsulate one procedure behind one name.</p>
+<p class='also'>Also called: Skill Artifact</p>
+<p class='def'>A named, documented, invocable unit of agent procedure — instructions, constraints, and optional supporting scripts — that an agent loads on demand to perform a recurring task in a governed way. Skills are versioned artifacts with declared triggers, distinct from the agent&#x27;s ambient instructions: they encapsulate one procedure behind one name.</p>
 <p><em>Example:</em> A record-lesson skill that an agent invokes to capture a durable learning with consistent structure, classification, and traceability.</p>
-<p>related: <a href='#Slash_Command'>Slash_Command</a> · related: <a href='#Agent_Capability'>Agent_Capability</a></p>
+<p class='meta'>Related: <a href='#Slash_Command'>Slash Command</a>, <a href='#Agent_Capability'>Agent Capability</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Agent_Skill</code></p>
 </section>
-<section id='Slash_Command'><h2>Slash Command</h2>
-<p><code>https://w3id.org/aget/vocab#Slash_Command</code></p>
-<p>A user-invocable command addressed by a leading slash (such as /review or /deploy) inside a chat, CLI, or agent interface, mapping a short memorable name to a defined procedure or prompt. In agentic coding tools, slash commands are the common invocation surface for agent skills.</p>
-<p><em>Example:</em> Typing /wake-up in an agent CLI invokes the session initialization skill; typing /review in a chat tool triggers a code review procedure.</p>
-<p>related: <a href='#Agent_Skill'>Agent_Skill</a></p>
+<section id='Agent_Template_Repository'><h2>Agent Template Repository</h2>
+<p class='also'>Also called: Agent Archetype Repository</p>
+<p class='def'>A published, version-controlled repository defining an agent archetype from which agent instances are instantiated, carrying baseline skills, capabilities, session protocols, and governance configuration. Distinct from an agent design pattern (a reusable architectural solution): a template repository is an instantiable artifact with a version lifecycle.</p>
+<p><em>Example:</em> A developer archetype repository that new coding agents are created from, inheriting its session protocols and baseline skills, then diverging with instance-specific memory and scope.</p>
+<p class='meta'>Related: <a href='#Aget_Agent'>Aget Agent</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Agent_Template_Repository</code></p>
 </section>
-<section id='Software_Hook'><h2>Software Hook</h2>
-<p><code>https://w3id.org/aget/vocab#Software_Hook</code></p>
-<p>A defined extension point at which a software system invokes externally supplied code in response to a lifecycle event, allowing behavior to be added or intercepted without modifying the host system. In agent frameworks, hooks fire on events such as session start or before tool execution, and are the structural surface for tracing and access control.</p>
-<p><em>Example:</em> A pre-tool-use hook that logs each consultation and denies callers not on an allowlist, enforcing policy even when higher-level configuration is inert.</p>
-<p>related: <a href='#Agent_Skill'>Agent_Skill</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/Software_Hook'>https://www.gabormelli.com/RKB/Software_Hook</a></p>
-</section>
-<section id='Executable_Knowledge_Ontology'><h2>Executable Knowledge Ontology</h2>
-<p><code>https://w3id.org/aget/vocab#Executable_Knowledge_Ontology</code></p>
-<p>A structured vocabulary that classifies knowledge artifacts by how executable they are, organizing them along axes such as abstraction level (from algorithm to concrete execution), determinism, and reusability. Bridges documentation and automation: entries are classified by whether a machine can act on them directly, with parameters, or only via human interpretation.</p>
-<p><em>Example:</em> Classifying a deployment procedure as parameterized-executable (a script with inputs) versus a design rationale as human-interpretable knowledge.</p>
-<p>related: <a href='#Learning_Document'>Learning_Document</a></p>
-</section>
-<section id='Session_Protocol'><h2>Session Protocol</h2>
-<p><code>https://w3id.org/aget/vocab#Session_Protocol</code></p>
-<p>A defined, repeatable procedure governing a phase of a software session&#x27;s lifecycle — initialization, checkpointing, health verification, or termination — so that session state transitions are performed by rule rather than improvisation.</p>
-<p><em>Example:</em> An agent&#x27;s session protocols include a wake-up procedure, a mid-session checkpoint save, and a wind-down closure with handoff.</p>
-<p>broader: <a href='#Software_Session'>Software_Session</a> · related: <a href='#Initialization_Protocol'>Initialization_Protocol</a> · related: <a href='#Termination_Protocol'>Termination_Protocol</a></p>
-</section>
-<section id='Software_Specification'><h2>Software Specification</h2>
-<p><code>https://w3id.org/aget/vocab#Software_Specification</code></p>
-<p>A contract-level document that formalizes intended software behavior as testable, enforceable requirements, typically in a controlled syntax with unique requirement identifiers and paired verification tests. In a two-level model, specifications formalize human-level requirements; when behavior fails, the specification is examined first, since code can correctly implement a wrong specification.</p>
-<p><em>Example:</em> A session-lifecycle specification whose requirements each carry an identifier, a controlled-syntax statement, and an executable verification test.</p>
-<p>related: <a href='#Verification_Test'>Verification_Test</a> · related: <a href='#Agent_Capability'>Agent_Capability</a></p>
+<section id='Aget_Agent'><h2>Aget Agent</h2>
+<p class='also'>Also called: Aget, AGET Agent, AGET Instance</p>
+<p class='def'>A configured software agent instance built on the AGET framework, combining an identity (purpose, scope, governing constraints), persistent memory, skill-based capabilities, and session lifecycle protocols. Instantiated from an agent template repository and operated in collaboration with a human principal who holds decision authority over irreversible acts.</p>
+<p><em>Example:</em> A framework-manager agent instance that stewards a public repository: it wakes with its identity and pending work, executes gated plans, and records lessons for future sessions.</p>
+<p class='meta'>Related: <a href='#Agent_Fleet'>Agent Fleet</a>, <a href='#Agent_Template_Repository'>Agent Template Repository</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Aget_Agent</code></p>
 </section>
 <section id='AGET_Framework'><h2>AGET Framework</h2>
-<p><code>https://w3id.org/aget/vocab#AGET_Framework</code></p>
-<p>A configuration and lifecycle management framework for CLI-based human-AI collaborative coding agents, providing agent identity, persistent memory, skill- based capabilities, session protocols, template repositories, and governance constraints with approval gates. Distributed as a public reference implementation with instantiable agent templates.</p>
+<p class='also'>Also called: AGET</p>
+<p class='def'>A configuration and lifecycle management framework for CLI-based human-AI collaborative coding agents, providing agent identity, persistent memory, skill- based capabilities, session protocols, template repositories, and governance constraints with approval gates. Distributed as a public reference implementation with instantiable agent templates.</p>
 <p><em>Example:</em> An engineer instantiates a worker agent from an AGET template, and the agent thereafter wakes, works within gated plans, records lessons, and winds down under the framework&#x27;s session protocols.</p>
-<p>related: <a href='#Aget_Agent'>Aget_Agent</a> · related: <a href='#Agent_Template_Repository'>Agent_Template_Repository</a> · related: <a href='#Agent_Fleet'>Agent_Fleet</a></p>
-<p>Forum page: <a href='https://www.gabormelli.com/RKB/AGET_Framework'>https://www.gabormelli.com/RKB/AGET_Framework</a></p>
-</section>
-<section id='Ontology_CI_Gate'><h2>Ontology CI Gate</h2>
-<p><code>https://w3id.org/aget/vocab#Ontology_CI_Gate</code></p>
-<p>A check that runs a controlled vocabulary&#x27;s quality validators automatically on every proposed change, and blocks the change from being merged when a validator reports a defect. Without it, validation depends on someone remembering to run it, so a vocabulary can accumulate defects indefinitely while each individual change is believed to have been checked — the belief and the measurement drift apart with nothing to reconcile them.</p>
-<p><em>Example:</em> A project keeps a link validator in its repository and runs it by hand at the end of each expansion cycle. Between cycles the vocabulary is unmeasured, and a defect introduced early is found only when someone next remembers. Wiring the same validator into the merge check converts the measurement from a habit into a precondition.</p>
-<p>related: <a href='#Reciprocal_Link_Validator'>Reciprocal_Link_Validator</a> · related: <a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author_Asserted_Cleanliness_Anti_Pattern</a> · related: <a href='#Reflexive_Validation_Methodology'>Reflexive_Validation_Methodology</a></p>
-</section>
-<section id='Denominator_Disclosure'><h2>Denominator Disclosure</h2>
-<p><code>https://w3id.org/aget/vocab#Denominator_Disclosure</code></p>
-<p>The obligation to state the population a rate or count was computed over, at the point the figure is asserted. Naming the instrument that produced a number answers how it was measured but never what it was measured over, and the two diverge silently. An instrument can be correct and still range over the wrong set, yielding a figure that is precise, reproducible and wrong — and undetectably so, because nothing in the figure records the set it came from.</p>
-<p><em>Example:</em> A census of managed agents taken by directory pattern returned four different totals on four occasions, each defensible from its own listing and none matching the authoritative register. The instrument was not at fault. No figure had stated the set it ranged over, so no two of them could be compared, and the disagreement went unnoticed.</p>
-<p>related: <a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author_Asserted_Cleanliness_Anti_Pattern</a></p>
-</section>
-<section id='Reciprocal_Link_Validator'><h2>Reciprocal Link Validator</h2>
-<p><code>https://w3id.org/aget/vocab#Reciprocal_Link_Validator</code></p>
-<p>A validator that checks whether the associative and hierarchical links in a concept scheme are declared symmetrically: that every concept named as related by another names it in return, and that every broader link has a matching narrower link on the parent it points to. It exists to catch the dominant failure mode of vocabularies maintained by addition, where a new concept is linked forward to existing ones and the corresponding edits to those existing ones are never made.</p>
-<p><em>Example:</em> An author adds a concept and lists six existing concepts as related to it. Unless each of those six is also edited, the vocabulary asserts the relationship in one direction only, and a reader arriving from any of the six will never reach the new concept.</p>
-<p>related: <a href='#Ontology_CI_Gate'>Ontology_CI_Gate</a> · related: <a href='#Forward_Only_Link_Defect'>Forward_Only_Link_Defect</a> · related: <a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author_Asserted_Cleanliness_Anti_Pattern</a> · related: <a href='#Reflexive_Validation_Methodology'>Reflexive_Validation_Methodology</a></p>
-</section>
-<section id='Forward_Only_Link_Defect'><h2>Forward-Only Link Defect</h2>
-<p><code>https://w3id.org/aget/vocab#Forward_Only_Link_Defect</code></p>
-<p>A defect in a concept scheme where a link between two concepts is declared in one direction only, because the author edited the concept being added and not the existing concepts it points at. The defect is invisible from the concept that was authored, where the work looks finished, and shows up only when the vocabulary is read from the other end. That asymmetry of visibility is why it accumulates rather than being caught.</p>
-<p><em>Example:</em> Across six consecutive expansion cycles of one vocabulary, links between concepts in the same cluster were made symmetric while being written, and links crossing clusters were deferred to a cleanup that was never scheduled. The deferred edits grew into the vocabulary&#x27;s single largest defect class.</p>
-<p>related: <a href='#Reciprocal_Link_Validator'>Reciprocal_Link_Validator</a></p>
-</section>
-<section id='Fail_Stop_Behavior'><h2>Fail-Stop Behavior</h2>
-<p><code>https://w3id.org/aget/vocab#Fail_Stop_Behavior</code></p>
-<p>A failure semantics in which a faulty component halts before producing any externally visible erroneous output, so that other components can reliably detect the failure and begin recovery. It is the strongest well-behaved failure class — detectable and non-contagious — and the property that makes a missing component safe: a check that cannot run must report that it could not run, because a silent absence reads as success.</p>
-<p><em>Example:</em> An agent meeting unambiguously corrupted state halts cleanly instead of continuing and emitting plausible output derived from it. A supervisor can then trust that a halted worker sent nothing downstream. The contrasting case is arbitrary behavior, where a faulty component keeps producing output that cannot be distinguished from correct output.</p>
-<p>related: <a href='#Failure_Detector'>Failure_Detector</a></p>
-</section>
-<section id='Failure_Detector'><h2>Failure Detector</h2>
-<p><code>https://w3id.org/aget/vocab#Failure_Detector</code></p>
-<p>An abstract oracle in a distributed system that gives each process suspicion information about the others, classified by completeness (every crashed process is eventually suspected) and accuracy (correct processes are not suspected). Chandra and Toueg showed that the eventually-strong class is the weakest one that can solve consensus given a majority of correct processes, which sets a hard limit on what any supervisor can know about a worker it cannot see.</p>
-<p><em>Example:</em> Heartbeat-based liveness checking is inherently unreliable: a timeout cannot separate a crashed process from a slow one. Any liveness claim therefore carries a false-positive rate, and an escalation policy has to handle that rate rather than assume it away.</p>
-<p>related: <a href='#Fail_Stop_Behavior'>Fail_Stop_Behavior</a></p>
+<p class='meta'>Related: <a href='#Aget_Agent'>Aget Agent</a>, <a href='#Agent_Template_Repository'>Agent Template Repository</a>, <a href='#Agent_Fleet'>Agent Fleet</a></p>
+<p class='meta'><a href='https://www.gabormelli.com/RKB/AGET_Framework'>Longer article on GM-RKB →</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#AGET_Framework</code></p>
 </section>
 <section id='Author_Asserted_Cleanliness_Anti_Pattern'><h2>Author-Asserted Cleanliness Anti-Pattern</h2>
-<p><code>https://w3id.org/aget/vocab#Author_Asserted_Cleanliness_Anti_Pattern</code></p>
-<p>A failure mode in which an author, or a tool acting on their behalf, reports a vocabulary or artifact as free of defects on the strength of confidence rather than validator output. The harm is not that the claim is often wrong but that it is indistinguishable in form from a measured one, so it displaces the measurement it stands in for: a reader downstream treats an unmade claim as a verified one, and nothing in the record distinguishes them.</p>
+<p class='also'>Also called: Assert-Before-Verify, Confidence-As-Measurement</p>
+<p class='def'>A failure mode in which an author, or a tool acting on their behalf, reports a vocabulary or artifact as free of defects on the strength of confidence rather than validator output. The harm is not that the claim is often wrong but that it is indistinguishable in form from a measured one, so it displaces the measurement it stands in for: a reader downstream treats an unmade claim as a verified one, and nothing in the record distinguishes them.</p>
 <p><em>Example:</em> A procedure ended with the author recording &quot;no orphans, no dangling references, all links reciprocal&quot;. Replacing that line with a requirement to paste the validator&#x27;s actual output changed the reported state on the very first run.</p>
-<p>related: <a href='#Ontology_CI_Gate'>Ontology_CI_Gate</a> · related: <a href='#Reciprocal_Link_Validator'>Reciprocal_Link_Validator</a> · related: <a href='#Denominator_Disclosure'>Denominator_Disclosure</a></p>
+<p class='meta'>Related: <a href='#Ontology_CI_Gate'>Ontology CI Gate</a>, <a href='#Reciprocal_Link_Validator'>Reciprocal Link Validator</a>, <a href='#Denominator_Disclosure'>Denominator Disclosure</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Author_Asserted_Cleanliness_Anti_Pattern</code></p>
+</section>
+<section id='Denominator_Disclosure'><h2>Denominator Disclosure</h2>
+<p class='also'>Also called: Population Naming, Stated Denominator</p>
+<p class='def'>The obligation to state the population a rate or count was computed over, at the point the figure is asserted. Naming the instrument that produced a number answers how it was measured but never what it was measured over, and the two diverge silently. An instrument can be correct and still range over the wrong set, yielding a figure that is precise, reproducible and wrong — and undetectably so, because nothing in the figure records the set it came from.</p>
+<p><em>Example:</em> A census of managed agents taken by directory pattern returned four different totals on four occasions, each defensible from its own listing and none matching the authoritative register. The instrument was not at fault. No figure had stated the set it ranged over, so no two of them could be compared, and the disagreement went unnoticed.</p>
+<p class='meta'>Related: <a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author-Asserted Cleanliness Anti-Pattern</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Denominator_Disclosure</code></p>
+</section>
+<section id='Executable_Knowledge_Ontology'><h2>Executable Knowledge Ontology</h2>
+<p class='also'>Also called: EKO</p>
+<p class='def'>A structured vocabulary that classifies knowledge artifacts by how executable they are, organizing them along axes such as abstraction level (from algorithm to concrete execution), determinism, and reusability. Bridges documentation and automation: entries are classified by whether a machine can act on them directly, with parameters, or only via human interpretation.</p>
+<p><em>Example:</em> Classifying a deployment procedure as parameterized-executable (a script with inputs) versus a design rationale as human-interpretable knowledge.</p>
+<p class='meta'>Related: <a href='#Learning_Document'>Learning Document</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Executable_Knowledge_Ontology</code></p>
+</section>
+<section id='Fail_Stop_Behavior'><h2>Fail-Stop Behavior</h2>
+<p class='also'>Also called: Fail-Stop Processor, Fail-Stop Failure Mode</p>
+<p class='def'>A failure semantics in which a faulty component halts before producing any externally visible erroneous output, so that other components can reliably detect the failure and begin recovery. It is the strongest well-behaved failure class — detectable and non-contagious — and the property that makes a missing component safe: a check that cannot run must report that it could not run, because a silent absence reads as success.</p>
+<p><em>Example:</em> An agent meeting unambiguously corrupted state halts cleanly instead of continuing and emitting plausible output derived from it. A supervisor can then trust that a halted worker sent nothing downstream. The contrasting case is arbitrary behavior, where a faulty component keeps producing output that cannot be distinguished from correct output.</p>
+<p class='meta'>Related: <a href='#Failure_Detector'>Failure Detector</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Fail_Stop_Behavior</code></p>
+</section>
+<section id='Failure_Detector'><h2>Failure Detector</h2>
+<p class='also'>Also called: Unreliable Failure Detector, Crash Detector</p>
+<p class='def'>An abstract oracle in a distributed system that gives each process suspicion information about the others, classified by completeness (every crashed process is eventually suspected) and accuracy (correct processes are not suspected). Chandra and Toueg showed that the eventually-strong class is the weakest one that can solve consensus given a majority of correct processes, which sets a hard limit on what any supervisor can know about a worker it cannot see.</p>
+<p><em>Example:</em> Heartbeat-based liveness checking is inherently unreliable: a timeout cannot separate a crashed process from a slow one. Any liveness claim therefore carries a false-positive rate, and an escalation policy has to handle that rate rather than assume it away.</p>
+<p class='meta'>Related: <a href='#Fail_Stop_Behavior'>Fail-Stop Behavior</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Failure_Detector</code></p>
+</section>
+<section id='Forward_Only_Link_Defect'><h2>Forward-Only Link Defect</h2>
+<p class='also'>Also called: Asymmetric Reciprocity Defect, Lane-1 / Lane-2 Reciprocity Defect</p>
+<p class='def'>A defect in a concept scheme where a link between two concepts is declared in one direction only, because the author edited the concept being added and not the existing concepts it points at. The defect is invisible from the concept that was authored, where the work looks finished, and shows up only when the vocabulary is read from the other end. That asymmetry of visibility is why it accumulates rather than being caught.</p>
+<p><em>Example:</em> Across six consecutive expansion cycles of one vocabulary, links between concepts in the same cluster were made symmetric while being written, and links crossing clusters were deferred to a cleanup that was never scheduled. The deferred edits grew into the vocabulary&#x27;s single largest defect class.</p>
+<p class='meta'>Related: <a href='#Reciprocal_Link_Validator'>Reciprocal Link Validator</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Forward_Only_Link_Defect</code></p>
+</section>
+<section id='Initialization_Protocol'><h2>Initialization Protocol</h2>
+<p class='also'>Also called: Wake-Up Protocol, Session Initialization</p>
+<p class='def'>A defined startup ritual that loads an agent&#x27;s identity, version, governing constraints, and pending work into operating context before substantive work begins. Ensures each operating interval starts from verified state rather than assumptions; the counterpart termination protocol performs structured closure and handoff.</p>
+<p><em>Example:</em> On &quot;wake up&quot;, an agent runs its initialization protocol: read identity and version, verify governance is loaded, list active work, report readiness.</p>
+<p class='meta'>Related: <a href='#Software_Session'>Software Session</a></p>
+<p class='meta'><a href='https://www.gabormelli.com/RKB/Initialization_Protocol'>Longer article on GM-RKB →</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Initialization_Protocol</code></p>
+</section>
+<section id='Learning_Document'><h2>Learning Document</h2>
+<p class='also'>Also called: L-doc, Lesson-Learned Document</p>
+<p class='def'>A structured, persistent, searchable document that captures a single durable lesson extracted from operational experience, classified for reuse either by other agents (framework lessons) or by the human principal (domain lessons). Functions as a unit of organizational memory that persists beyond ephemeral session context; designed for accretion — many small cross-linked documents rather than monolithic reports.</p>
+<p><em>Example:</em> An agent records a lesson that publication-forum decisions are not publication- standard adoptions, and later sessions cite it before designing a publishing capability.</p>
+<p class='meta'>Related: <a href='#Software_Session'>Software Session</a></p>
+<p class='meta'><a href='https://www.gabormelli.com/RKB/Learning_Document'>Longer article on GM-RKB →</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Learning_Document</code></p>
+</section>
+<section id='Ontology_CI_Gate'><h2>Ontology CI Gate</h2>
+<p class='also'>Also called: Continuous Validation Gate, Pre-Merge Ontology Check</p>
+<p class='def'>A check that runs a controlled vocabulary&#x27;s quality validators automatically on every proposed change, and blocks the change from being merged when a validator reports a defect. Without it, validation depends on someone remembering to run it, so a vocabulary can accumulate defects indefinitely while each individual change is believed to have been checked — the belief and the measurement drift apart with nothing to reconcile them.</p>
+<p><em>Example:</em> A project keeps a link validator in its repository and runs it by hand at the end of each expansion cycle. Between cycles the vocabulary is unmeasured, and a defect introduced early is found only when someone next remembers. Wiring the same validator into the merge check converts the measurement from a habit into a precondition.</p>
+<p class='meta'>Related: <a href='#Reciprocal_Link_Validator'>Reciprocal Link Validator</a>, <a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author-Asserted Cleanliness Anti-Pattern</a>, <a href='#Reflexive_Validation_Methodology'>Reflexive Validation Methodology</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Ontology_CI_Gate</code></p>
+</section>
+<section id='Reciprocal_Link_Validator'><h2>Reciprocal Link Validator</h2>
+<p class='also'>Also called: Symmetric-Link Checker, Three-Lane Reciprocity Validator</p>
+<p class='def'>A validator that checks whether the associative and hierarchical links in a concept scheme are declared symmetrically: that every concept named as related by another names it in return, and that every broader link has a matching narrower link on the parent it points to. It exists to catch the dominant failure mode of vocabularies maintained by addition, where a new concept is linked forward to existing ones and the corresponding edits to those existing ones are never made.</p>
+<p><em>Example:</em> An author adds a concept and lists six existing concepts as related to it. Unless each of those six is also edited, the vocabulary asserts the relationship in one direction only, and a reader arriving from any of the six will never reach the new concept.</p>
+<p class='meta'>Related: <a href='#Ontology_CI_Gate'>Ontology CI Gate</a>, <a href='#Forward_Only_Link_Defect'>Forward-Only Link Defect</a>, <a href='#Author_Asserted_Cleanliness_Anti_Pattern'>Author-Asserted Cleanliness Anti-Pattern</a>, <a href='#Reflexive_Validation_Methodology'>Reflexive Validation Methodology</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Reciprocal_Link_Validator</code></p>
 </section>
 <section id='Reflexive_Validation_Methodology'><h2>Reflexive Validation Methodology</h2>
-<p><code>https://w3id.org/aget/vocab#Reflexive_Validation_Methodology</code></p>
-<p>A methodology for validating a vocabulary or a tool by turning it on itself — using the expansion procedure to expand the vocabulary that describes expansion, or the validation concepts to validate the validator. The reflexive case is diagnostic because it is the one case whose authors cannot argue is unrepresentative: a procedure that fails on its own subject matter has been falsified by the least contrived example available to it.</p>
+<p class='also'>Also called: Self-Test Vocabulary Pattern, Tool-As-Own-Subject</p>
+<p class='def'>A methodology for validating a vocabulary or a tool by turning it on itself — using the expansion procedure to expand the vocabulary that describes expansion, or the validation concepts to validate the validator. The reflexive case is diagnostic because it is the one case whose authors cannot argue is unrepresentative: a procedure that fails on its own subject matter has been falsified by the least contrived example available to it.</p>
 <p><em>Example:</em> A vocabulary was expanded with concepts describing validation, and its own validators were then run over the result. The defects that surfaced were in the validators&#x27; coverage rather than in the new concepts — a gap that expansions into unrelated domains had never exposed.</p>
-<p>related: <a href='#Ontology_CI_Gate'>Ontology_CI_Gate</a> · related: <a href='#Reciprocal_Link_Validator'>Reciprocal_Link_Validator</a></p>
+<p class='meta'>Related: <a href='#Ontology_CI_Gate'>Ontology CI Gate</a>, <a href='#Reciprocal_Link_Validator'>Reciprocal Link Validator</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Reflexive_Validation_Methodology</code></p>
 </section>
-<hr><p>Published from the <a href='https://github.com/aget-framework'>AGET framework</a>.</p></body></html>
+<section id='Session_Protocol'><h2>Session Protocol</h2>
+<p class='def'>A defined, repeatable procedure governing a phase of a software session&#x27;s lifecycle — initialization, checkpointing, health verification, or termination — so that session state transitions are performed by rule rather than improvisation.</p>
+<p><em>Example:</em> An agent&#x27;s session protocols include a wake-up procedure, a mid-session checkpoint save, and a wind-down closure with handoff.</p>
+<p class='meta'>Broader: <a href='#Software_Session'>Software Session</a></p>
+<p class='meta'>Related: <a href='#Initialization_Protocol'>Initialization Protocol</a>, <a href='#Termination_Protocol'>Termination Protocol</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Session_Protocol</code></p>
+</section>
+<section id='Slash_Command'><h2>Slash Command</h2>
+<p class='def'>A user-invocable command addressed by a leading slash (such as /review or /deploy) inside a chat, CLI, or agent interface, mapping a short memorable name to a defined procedure or prompt. In agentic coding tools, slash commands are the common invocation surface for agent skills.</p>
+<p><em>Example:</em> Typing /wake-up in an agent CLI invokes the session initialization skill; typing /review in a chat tool triggers a code review procedure.</p>
+<p class='meta'>Related: <a href='#Agent_Skill'>Agent Skill</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Slash_Command</code></p>
+</section>
+<section id='Software_Hook'><h2>Software Hook</h2>
+<p class='also'>Also called: Hook</p>
+<p class='def'>A defined extension point at which a software system invokes externally supplied code in response to a lifecycle event, allowing behavior to be added or intercepted without modifying the host system. In agent frameworks, hooks fire on events such as session start or before tool execution, and are the structural surface for tracing and access control.</p>
+<p><em>Example:</em> A pre-tool-use hook that logs each consultation and denies callers not on an allowlist, enforcing policy even when higher-level configuration is inert.</p>
+<p class='meta'>Related: <a href='#Agent_Skill'>Agent Skill</a></p>
+<p class='meta'><a href='https://www.gabormelli.com/RKB/Software_Hook'>Longer article on GM-RKB →</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Software_Hook</code></p>
+</section>
+<section id='Software_Session'><h2>Software Session</h2>
+<p class='also'>Also called: Agent Session, Work Session</p>
+<p class='def'>A bounded interval of interactive or autonomous software operation with a defined start and end, its own working context, and lifecycle protocols that establish and wind down that context. For collaborative agents, the session is the unit within which context is loaded, work is performed, and durable artifacts are handed off.</p>
+<p><em>Example:</em> An agent session opens with an initialization protocol that loads identity and pending work, and closes by writing a handoff file for the next session.</p>
+<p class='meta'>Related: <a href='#Initialization_Protocol'>Initialization Protocol</a>, <a href='#Learning_Document'>Learning Document</a></p>
+<p class='meta'><a href='https://www.gabormelli.com/RKB/Software_Session'>Longer article on GM-RKB →</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Software_Session</code></p>
+</section>
+<section id='Software_Specification'><h2>Software Specification</h2>
+<p class='def'>A contract-level document that formalizes intended software behavior as testable, enforceable requirements, typically in a controlled syntax with unique requirement identifiers and paired verification tests. In a two-level model, specifications formalize human-level requirements; when behavior fails, the specification is examined first, since code can correctly implement a wrong specification.</p>
+<p><em>Example:</em> A session-lifecycle specification whose requirements each carry an identifier, a controlled-syntax statement, and an executable verification test.</p>
+<p class='meta'>Related: <a href='#Verification_Test'>Verification Test</a>, <a href='#Agent_Capability'>Agent Capability</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Software_Specification</code></p>
+</section>
+<section id='Termination_Protocol'><h2>Termination Protocol</h2>
+<p class='also'>Also called: Wind-Down Protocol, Session Closure Protocol</p>
+<p class='def'>A defined closure ritual that ends an agent&#x27;s operating interval in a recoverable state: verifying health, capturing pending work, recording session artifacts, and preparing handoff context so the next interval can resume without loss. The counterpart of an initialization protocol.</p>
+<p><em>Example:</em> On &quot;wind down&quot;, an agent checks for uncommitted changes and open plans, writes a session summary with handoff notes, and reports what the next session should pick up.</p>
+<p class='meta'>Related: <a href='#Initialization_Protocol'>Initialization Protocol</a>, <a href='#Software_Session'>Software Session</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Termination_Protocol</code></p>
+</section>
+<section id='Verification_Test'><h2>Verification Test</h2>
+<p class='also'>Also called: V-Test</p>
+<p class='def'>An executable check paired with a requirement or deliverable that returns pass or fail, distinguishing verified completion from declared completion. Verification tests gate stage boundaries: work is complete when its test passes, not when its author asserts completion.</p>
+<p><em>Example:</em> A release gate requires each advertised capability to pass its verification test — an executable command whose output confirms the artifact exists and behaves as claimed — before the release tag is created.</p>
+<p class='meta'><a href='https://www.gabormelli.com/RKB/Verification_Test'>Longer article on GM-RKB →</a></p>
+<p class='uri'>Permanent address: <code>https://w3id.org/aget/vocab#Verification_Test</code></p>
+</section>
+<footer><p>Machine-readable: <a href='vocab.ttl'>Turtle</a> · <a href='vocab.jsonld'>JSON-LD</a> · License: <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache-2.0</a></p><p>Published from the <a href='https://github.com/aget-framework'>AGET framework</a>.</p></footer></main></body></html>

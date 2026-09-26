@@ -70,6 +70,7 @@ aget:Verification_Test a skos:Concept ;
 
 aget:Aget_Agent a skos:Concept ;
     skos:prefLabel "Aget Agent"@en ;
+    skos:altLabel "Aget"@en ;
     skos:altLabel "AGET Agent"@en ;
     skos:altLabel "AGET Instance"@en ;
     skos:definition "A configured software agent instance built on the AGET framework, combining an identity (purpose, scope, governing constraints), persistent memory, skill-based capabilities, and session lifecycle protocols. Instantiated from an agent template repository and operated in collaboration with a human principal who holds decision authority over irreversible acts."@en ;
