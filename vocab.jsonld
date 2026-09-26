@@ -14,15 +14,28 @@
         "@value": "AGET Framework Vocabulary",
         "@language": "en"
       },
+      "skos:definition": {
+        "@value": "Published concepts from the AGET framework \u2014 configuration and lifecycle management for CLI-based human-AI collaborative coding agents.",
+        "@language": "en"
+      },
       "dcterms:license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
       },
       "dcterms:creator": "AGET framework (github.com/aget-framework)",
-      "dcterms:issued": "2026-07-11",
-      "dcterms:modified": "2026-09-23",
+      "dcterms:issued": {
+        "@value": "2026-07-11",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      },
+      "dcterms:modified": {
+        "@value": "2026-09-25",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      },
       "vann:preferredNamespacePrefix": "aget",
       "vann:preferredNamespaceUri": "https://w3id.org/aget/vocab#",
-      "dcterms:provenance": "aget-publish-engine; emission-rule v2"
+      "dcterms:provenance": {
+        "@value": "aget-publish-engine; emission-rule v2",
+        "@language": "en"
+      }
     },
     {
       "@id": "aget:Learning_Document",
